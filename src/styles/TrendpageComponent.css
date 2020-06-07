@@ -1,0 +1,22 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Bahnschrift;
+}
+#tweets{
+    cursor: pointer;
+}
+#thoughts-count{
+    margin-left: 25px;
+    font-weight: 100;
+    color: gray;
+}
+.Main-Container{
+    padding-right: 300px;
+}
+.indiv-Container{
+    width: 500px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgb(214, 212, 212);
+}

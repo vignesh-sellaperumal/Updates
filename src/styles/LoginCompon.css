@@ -1,0 +1,74 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Bahnschrift;
+}
+.login-container{
+    margin-top: 100px;
+    margin-left: 250px;  
+}
+.signin-container{
+    margin-top: -15px;
+    margin-left: 250px;  
+}
+.box-cont{
+    width:380px;
+    border-style: solid ;
+    border-width: 1px;
+    border-color: rgb(235, 225, 225);
+}
+#sign-up{
+    font-family: Corbel Light;
+    margin-bottom: 15px;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-weight: 200;
+}
+#box-head{
+    font-family: Bahnschrift;
+    color: rgb(124, 124, 124);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#forgot{
+    color: skyblue;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+#connect{
+    margin-top: 10px;
+    margin-left: 135px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.inner-cont{
+    width:200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.links{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.label{
+    color:gray;
+    margin-bottom: 5px;
+}
+form{ 
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+}
+.facebook {
+    background-color: antiquewhite;
+  }
+  
+  .facebook:hover {
+      opacity: 0.7;
+  }

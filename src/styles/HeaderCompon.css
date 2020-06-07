@@ -1,0 +1,35 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Bahnschrift;
+}
+.Container{
+    background-color: rgb(76, 171, 209);
+    height: 50px;
+    margin-bottom: 40px;
+}
+.top-container{
+    margin: px 0px;
+}
+.Container h3{
+    padding: 15px;
+    color: white;
+}
+#white{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.top-one{
+    float: left;
+}
+.top-two{
+    text-align: right;
+}
+.nav-trend{
+    cursor: pointer;
+    float: left;
+}
+#nav-user{
+    cursor: pointer;
+}

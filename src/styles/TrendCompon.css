@@ -1,0 +1,21 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Bahnschrift;
+}
+#heading{
+    text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #5950db 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    margin-left: 320px;
+}
+.main-Container{
+    display: flex;
+}
+.One-Container{
+    height: 600px;
+    padding-right: 200px;
+    border-right: 1px solid rgb(224, 223, 223);
+}

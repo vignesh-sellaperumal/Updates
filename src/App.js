@@ -1,26 +1,43 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TrendComponent from './pages/TrendComponent';
+import CurrentComponent from './pages/CurrentComponent';
+import PostComponent from './pages/PostComponent';
+import HeaderComponent from './components/HeaderComponent';
+import LoginComponent from './pages/LoginComponent';
+import SignupComponent from './pages/SignupComponent';
+import {BrowserRouter, Route} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor()
+  {
+    super();
+  }
+  componentDidMount() {
+    window.addEventListener("popstate", this.onBackButtonEvent)
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("popstate", this.onBackButtonEvent)
+  }
+  
+  onBackButtonEvent = () => {
+    window.history.forward()
+  }
+  render()
+  {
+    return (
+      <BrowserRouter>
+      <Route exact path={"/"} component={TrendComponent} />
+      <Route exact path={"/user/:username"} component={TrendComponent} />
+      <Route exact path={"/login"} component={LoginComponent} />
+      <Route exact path={"/signup"} component={SignupComponent} />
+      <Route exact path={"/current/:username/:tag"} component={CurrentComponent} />
+      <Route exact path={"/post/:username"} component={PostComponent} />
+      </BrowserRouter>
+     );
+  }
 }
 
 export default App;

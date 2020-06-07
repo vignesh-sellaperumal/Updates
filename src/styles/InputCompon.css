@@ -1,0 +1,26 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Bahnschrift;
+}
+.middle{
+    padding: 10px;
+    width: 270px;
+    margin: 5px;
+}
+#tag{
+    width: 1000px;
+}
+#thought{
+    width: 350px;
+    height: 200px;
+}
+#about{
+    width: 290px;
+    height: 70px;
+}
+.details{
+    width: 300px;
+    padding: 7px;
+    margin-bottom: 10px;
+}
