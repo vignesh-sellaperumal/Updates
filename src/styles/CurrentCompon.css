@@ -8,12 +8,17 @@
     cursor: pointer;
     margin: auto;
 }
-.Main-Container{
-    margin-left: 240px;
-}
 .indiv-Container{
     width: 500px;
     padding-bottom: 10px;
     margin-bottom: 40px;
     border-bottom: 1px solid rgb(214, 212, 212);
+    margin-left: 20px;
+}
+@media (max-width: 600px)
+{
+    .indiv-Container{
+        width: 350px;
+        margin-left: 5px;
+    }
 }

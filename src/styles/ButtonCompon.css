@@ -68,3 +68,12 @@
   #newSignup{
       color: red;
   }
+  @media (max-width: 600px)
+  {
+    #login{
+        margin-left: 10px;
+    }
+    #write{
+        margin-left: 240px;
+    }
+  }

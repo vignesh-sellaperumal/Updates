@@ -21,8 +21,7 @@ const detailsSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        trim: true,
-        minlength: 3
+        trim: true
     },
     password: {
         type: String,
