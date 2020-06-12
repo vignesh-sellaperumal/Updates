@@ -19,17 +19,18 @@ class App extends React.Component {
   render()
   {
     return (
-      <BrowserRouter>
+//       <BrowserRouter>
 
-        <Route exact path={"/"} component={TrendComponent} />
-        <Route exact path={"/user/:username"} component={TrendComponent} />
-        <Route exact path={"/login"} component={LoginComponent} />
-        <Route exact path={"/signup"} component={SignupComponent} />
-        <Route exact path={"/current/:username/:tag"} component={CurrentComponent} />
-        <Route exact path={"/post/:username"} component={PostComponent} />
-        <Route exact path={"/profile/:username"} component={ProfileComponent} />
+//         <Route exact path={"/"} component={TrendComponent} />
+//         <Route exact path={"/user/:username"} component={TrendComponent} />
+//         <Route exact path={"/login"} component={LoginComponent} />
+//         <Route exact path={"/signup"} component={SignupComponent} />
+//         <Route exact path={"/current/:username/:tag"} component={CurrentComponent} />
+//         <Route exact path={"/post/:username"} component={PostComponent} />
+//         <Route exact path={"/profile/:username"} component={ProfileComponent} />
 
-      </BrowserRouter>
+//       </BrowserRouter>
+      <h1>hello</h1>
      );
   }
 }
