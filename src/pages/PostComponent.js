@@ -27,7 +27,7 @@ export default class PostComponent extends React.Component
         var timenow = new Date(now) 
             .toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
         axios.post(
-            'http://localhost:5000/exercises/add',
+            'https://backendtrends.herokuapp.com/exercises/add',
             {   tag: this.state.Tag,
                 thought: this.state.Thought,
                 username: this.props.match.params.username,
