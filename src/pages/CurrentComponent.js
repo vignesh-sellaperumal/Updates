@@ -16,7 +16,7 @@ export default class CurrentComponent extends React.Component
     }
     componentDidMount()
     {
-        axios.get('http://backendtrends.herokuapp.com/exercises/')
+        axios.get('https://backendtrends.herokuapp.com/exercises/')
         .then(response => {
             this.setState({thoughts:response.data})
             this.setState({isloading:'0'})
