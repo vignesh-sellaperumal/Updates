@@ -6,6 +6,7 @@ import InputComponent from '../components/InputComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import axios from 'axios';
 import disableBrowserBackButton from 'disable-browser-back-navigation';
+import nodemailer from 'nodemailer';
 
 class LoginComponent extends React.Component
 {
@@ -35,7 +36,7 @@ class LoginComponent extends React.Component
 
     redirectToHome = () =>
     {
-        axios.get('https://backendtrends.herokuapp.com/details/')
+        axios.get('http://localhost:5000/details/')
         .then(response => {
             const datas = response.data;
             for(let data of datas)

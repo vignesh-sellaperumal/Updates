@@ -26,10 +26,13 @@ router.route('/top').get((req, res) => {
 router.route('/add').post((req,res) => {
     const tag = req.body.tag;
     const thought = req.body.thought;
-
+    const username = req.body.username;
+    const time = req.body.timenow;
     const newExercise = new Exercise({ 
         tag,
-        thought
+        thought,
+        username,
+        time
     });
 
     newExercise.save()

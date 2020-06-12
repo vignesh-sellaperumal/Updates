@@ -16,7 +16,7 @@ export default class CurrentComponent extends React.Component
     }
     componentDidMount()
     {
-        axios.get('https://backendtrends.herokuapp.com/exercises/')
+        axios.get('http://localhost:5000/exercises/')
         .then(response => {
             this.setState({thoughts:response.data})
             this.setState({isloading:'0'})
@@ -28,7 +28,7 @@ export default class CurrentComponent extends React.Component
             for(let d of this.state.thoughts)
             {
                 if(d.tag == this.props.match.params.tag) {
-                    arrayofCards.push(<CurrentCompon Tags = {d.thought}></CurrentCompon>)
+                    arrayofCards.push(<CurrentCompon Tags = {d}></CurrentCompon>)
                 }
             }
             return arrayofCards;
