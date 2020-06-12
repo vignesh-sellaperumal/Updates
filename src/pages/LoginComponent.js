@@ -36,7 +36,7 @@ class LoginComponent extends React.Component
 
     redirectToHome = () =>
     {
-        axios.get('http://localhost:5000/details/')
+        axios.get('https://backendtrends.herokuapp.com/details/')
         .then(response => {
             const datas = response.data;
             for(let data of datas)
