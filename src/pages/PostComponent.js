@@ -23,28 +23,23 @@ export default class PostComponent extends React.Component
     }
     postThought = () =>
     {
-        var now = new Date().getTime();
-        var timenow = new Date(now) 
-            .toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
         axios.post(
-            'https://backendtrends.herokuapp.com/exercises/add',
+            'http://localhost:5000/exercises/add',
             {   tag: this.state.Tag,
-                thought: this.state.Thought,
-                username: this.props.match.params.username,
-                timenow: timenow
+                thought: this.state.Thought
             },
             { headers: { 'Content-Type': 'application/json' } }
           )
-          .then(res => alert("Posted Redirected to Trending :)"))
-          .then(res => this.props.history.push("/user/"+this.props.match.params.username))
-          .catch(err => alert("Try again may be an error!"));
+          .then(res => alert("Tweet Posted Redirected to Trending :)"))
+          .catch(err => alert(err))
+          this.props.history.push("/user/"+this.props.match.params.username);
     }
     render()
     {
         return(
             <div>
                 <HeaderComponent></HeaderComponent>
-                <div>
+                <div className="Main-Container">
                     <div  className="field-Container">                   
                         <InputComponent type="text" name="tag" placeholder="Tag" className="middle" value={this.state.Tag} onChange={(event) => this.updateTag(event.target.value)}/>
                         <textarea className="middle" id="thought" placeholder="Write Something!" value={this.state.Thought} onChange={(event) => this.updateThought(event.target.value)}></textarea> 

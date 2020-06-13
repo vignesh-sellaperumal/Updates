@@ -12,36 +12,18 @@ export default class SignupComponent extends React.Component
     {
         super();
         this.state = {
-            existlist : [],
             email : '',
             username : '',
             about : '',
             password : '',
-            confirmPassword : '',
-            usercheck : ''
+            confirmPassword : ''
         }
-    }
-    componentWillMount(){
-        axios.get('https://backendtrends.herokuapp.com/details/')
-        .then(response => {
-            this.setState({existlist:response.data});
-        })
     }
     updateEmail(newname){
         this.setState({email:newname});
     }
     updateUsername(newname){
         this.setState({username:newname});
-            
-        for(let data of this.state.existlist)
-        {
-            if(data.username==newname){
-                this.setState({usercheck:"user exists!"});                    
-            }
-            else{
-                this.setState({usercheck:''});
-            } 
-        }
     }
     updateAbout(newname){
         this.setState({about:newname});
@@ -54,40 +36,23 @@ export default class SignupComponent extends React.Component
     }
 
     redirectToLogin = () => {
-        if(this.state.password == this.state.confirmPassword){
             axios.post(
-                'https://backendtrends.herokuapp.com/details/add',
+                'http://localhost:5000/details/add',
                 { 
                   email: this.state.email,
                   username: this.state.username,
                   about: this.state.about,
                   password: this.state.password },
                 { headers: { 'Content-Type': 'application/json' } }
-              ).then(res => alert("signed up successfully! :)"))
-               .then(res =>this.propts.history.push("/login"))
-               .catch(err => alert("please check your username or may be network error try again!"))   
-        }
-        else{
-            alert("passwords does not match!");
-        }
-    }
-    togglePassword(){
-        var value = document.getElementById("password");
-        var val = document.getElementById("con-password");
-        if(value.type === "password") {
-            value.type = "text";
-            val.type = "text";
-        } else {
-            value.type = "password";
-            val.type = "password";
-        }
+              ).then(res => alert("signed up successfully! :)"));
+            this.props.history.push("/login");
     }
     render()
     {
         return(
             <div>
                 <HeaderComponent></HeaderComponent>
-            <div>
+            <div className = "Main-Container">
                 <div class="signin-container">
                     <div class="box-cont">
                         <div class="inner-cont">
@@ -96,15 +61,13 @@ export default class SignupComponent extends React.Component
                             <label class="label">Email</label>
                                 <InputComponent type="text" placeholder="email" className="details" value={this.state.email} onChange={(event) => this.updateEmail(event.target.value)}></InputComponent>
                                 <label class="label">Username</label>
-                                <h6 id="warninguserexists">{this.state.usercheck}</h6>
-                                <InputComponent type="text" placeholder="username" className="details" id="usercheck" value={this.state.username} onChange={(event) => this.updateUsername(event.target.value)}></InputComponent>
+                                <InputComponent type="text" placeholder="username" className="details" value={this.state.username} onChange={(event) => this.updateUsername(event.target.value)}></InputComponent>
                                 <label class="label">About</label>
                                 <textarea className="middle" id="about" placeholder="write something about you!" value={this.state.about} onChange={(event) => this.updateAbout(event.target.value)}></textarea> 
                                 <label  class="label">Password</label>
-                                <InputComponent type="password" placeholder="password" id="password" className="details" value={this.state.password} onChange={(event) => this.updatePassword(event.target.value)}></InputComponent>
+                                <InputComponent type="password" placeholder="password" className="details" value={this.state.password} onChange={(event) => this.updatePassword(event.target.value)}></InputComponent>
                                 <label  class="label">Confirm Password</label>
-                                <InputComponent type="password" placeholder="confirm password" id="con-password" className="details" value={this.state.confirmPassword} onChange={(event) => this.updateConfirmPassword(event.target.value)}></InputComponent>
-                                <h4><input type="checkbox" onClick={() => this.togglePassword()}/> show password</h4>
+                                <InputComponent type="password" placeholder="confirm password" className="details" value={this.state.confirmPassword} onChange={(event) => this.updateConfirmPassword(event.target.value)}></InputComponent>
                                 <ButtonComponent type="button" value="Sign in" id="login" onClick = {this.redirectToLogin}></ButtonComponent>                         
                             </form>
                         </div>

@@ -3,34 +3,19 @@
     padding:0px;
     font-family: Bahnschrift;
 }
-.currentCont, .trendCont{
-    width: 500px;
-}
 #heading{
     text-transform: uppercase;
-	background: linear-gradient(to right, #30CFD0 0%, #1f11e6 100%);
-    background-clip: text;
+	background: linear-gradient(to right, #30CFD0 0%, #5950db 100%);
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
     margin-bottom: 30px;
-    margin-left: 80px;
+    margin-left: 320px;
 }
-#thoughtheading{
-    text-transform: uppercase;
-	background: linear-gradient(to right, #30CFD0 0%, #1f11e6 100%);
-    background-clip: text;
-	-webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
-    margin-left: auto;
-    text-align: center;
+.main-Container{
+    display: flex;
 }
-@media (max-width: 600px)
-{
-    #heading, #thoughtheading{
-        font-size: 26px;
-        text-align: center;
-        margin-left: 0px;
-    }
-    .currentCont, .trendCont{
-        width: auto;
-    }
+.One-Container{
+    height: 600px;
+    padding-right: 200px;
+    border-right: 1px solid rgb(224, 223, 223);
 }

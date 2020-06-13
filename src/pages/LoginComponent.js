@@ -1,13 +1,12 @@
 import React from 'react';
 import '../styles/LoginCompon.css';
-import { BrowserRouter, Route, NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ButtonComponent from '../components/ButtonComponent';
 import InputComponent from '../components/InputComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import axios from 'axios';
-import disableBrowserBackButton from 'disable-browser-back-navigation';
 
-class LoginComponent extends React.Component
+export default class LoginComponent extends React.Component
 {
     constructor()
     {
@@ -17,14 +16,6 @@ class LoginComponent extends React.Component
             password : ''
         }
     }
-
-    componentWillMount(){
-        disableBrowserBackButton();
-    }
-    componentDidMount(){
-        disableBrowserBackButton();
-    }
-
     updateUsername(newname){
         this.setState({username:newname});
     }
@@ -35,7 +26,7 @@ class LoginComponent extends React.Component
 
     redirectToHome = () =>
     {
-        axios.get('https://backendtrends.herokuapp.com/details/')
+        axios.get('http://localhost:5000/details/')
         .then(response => {
             const datas = response.data;
             for(let data of datas)
@@ -43,34 +34,21 @@ class LoginComponent extends React.Component
                 if(data.username==this.state.username){
                     if(data.password==this.state.password){
                         this.props.history.replace("/user/"+this.state.username);
-                        return;
                     }
                     else{
                         alert('please verify username or password!');
                         this.props.history.push("/login");
-                        return;
                     } 
                 }
             }
-            alert('please verify username or password!');
-            return;
         })  
     }
-    togglePassword(){
-        var value = document.getElementById("password");
-        if(value.type === "password") {
-            value.type = "text";
-        } else {
-            value.type = "password";
-        }
-    }
-
     render()
     {
         return(
             <div>
                 <HeaderComponent></HeaderComponent>
-            <div>
+            <div className = "Main-Container">
                 <div class="login-container">
                     <div class="box-cont">
                         <div class="inner-cont">
@@ -79,8 +57,7 @@ class LoginComponent extends React.Component
                                 <label class="label">Username</label>
                                 <InputComponent type="text" placeholder="username" className="details" value={this.state.username} onChange={(event) => this.updateUsername(event.target.value)}></InputComponent>
                                 <label  class="label">Password</label>
-                                <InputComponent type="password" placeholder="password" className="details" id="password" value={this.state.password} onChange={(event) => this.updatePassword(event.target.value)}></InputComponent>
-                                <h4><input type="checkbox" onClick={() => this.togglePassword()}/> show password</h4>
+                                <InputComponent type="password" placeholder="password" className="details" value={this.state.password} onChange={(event) => this.updatePassword(event.target.value)}></InputComponent>
                                 <a href="#" id="forgot">Forgot Password?</a>
                                 <ButtonComponent type="button" value="Login" id="login" onClick = {this.redirectToHome}></ButtonComponent>                         
                             </form>
@@ -96,5 +73,3 @@ class LoginComponent extends React.Component
         )
     }
 }
-
-export default withRouter(LoginComponent);

@@ -5,12 +5,6 @@
 }
 .field-Container{
     margin-top: 150px;
-    margin-left: 500px;
+    margin-left: 250px;
     width: 270px;
-}
-@media (max-width: 600px)
-{
-    .field-Container{
-        margin: 0px;
-    }
 }

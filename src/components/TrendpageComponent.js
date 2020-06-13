@@ -13,8 +13,8 @@ class TrendpageComponent extends React.Component
     render()
     {
         return(
-            <div>
-                <div className = "TrendPageMain">
+            <div className = "Main-Container">
+                <div className = "indiv-Container">
                     <h2 onClick={() => this.props.navigation.push("/current/"+this.props.match.params.username+"/"+this.props.Tags._id)} id="tweets">{this.props.count}. {this.props.Tags._id}</h2>
                     <h6 id = "thoughts-count">{this.props.Tags.count} tweets</h6>
                 </div>
