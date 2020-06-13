@@ -5,11 +5,12 @@
 }
 .login-container{
     margin-top: 100px;
-    margin-left: 250px;  
+    margin-left: 500px;  
 }
 .signin-container{
     margin-top: -15px;
-    margin-left: 250px;  
+    margin-left: 500px;  
+    margin-bottom: 60px;
 }
 .box-cont{
     width:380px;
@@ -20,7 +21,7 @@
 #sign-up{
     font-family: Corbel Light;
     margin-bottom: 15px;
-    margin-left: 100px;
+    margin-left: 80px;
     margin-top: 10px;
     font-weight: 200;
 }
@@ -35,24 +36,12 @@
     margin-bottom: 30px;
     margin-top: 10px;
 }
-#connect{
-    margin-top: 10px;
-    margin-left: 135px;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
 .inner-cont{
     width:200px;
     display: flex;
     flex-direction: column;
     margin-left: 40px;
     margin-top: 10px;
-}
-.links{
-    margin-left: 100px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
 }
 .label{
     color:gray;
@@ -65,10 +54,27 @@ form{
 a{
     text-decoration: none;
 }
-.facebook {
-    background-color: antiquewhite;
-  }
-  
-  .facebook:hover {
-      opacity: 0.7;
-  }
+#warninguserexists{
+    color: red;
+    font-weight: 100;
+}
+@media (max-width: 500px)
+{
+    .login-container{
+        margin: 0px;
+    }
+    .signin-container{
+        margin: 0px;
+        margin-bottom: 70px;
+    }
+    .box-cont{
+        width:300px;
+        margin-left: 30px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(235, 225, 225);
+    }
+    #sign-up{
+        margin-left: 80px;
+    }
+}
