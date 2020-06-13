@@ -28,7 +28,7 @@ export default class CurrentComponent extends React.Component
             for(let d of this.state.thoughts)
             {
                 if(d.tag == this.props.match.params.tag) {
-                    arrayofCards.push(<CurrentCompon Tags = {d}></CurrentCompon>)
+                    arrayofCards.push(<CurrentCompon Tags = {d.thought}></CurrentCompon>)
                 }
             }
             return arrayofCards;

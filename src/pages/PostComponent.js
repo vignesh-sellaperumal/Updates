@@ -23,15 +23,10 @@ export default class PostComponent extends React.Component
     }
     postThought = () =>
     {
-        var now = new Date().getTime();
-        var timenow = new Date(now) 
-            .toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
         axios.post(
             'https://backendtrends.herokuapp.com/exercises/add',
             {   tag: this.state.Tag,
-                thought: this.state.Thought,
-                username: this.props.match.params.username,
-                timenow: timenow
+                thought: this.state.Thought
             },
             { headers: { 'Content-Type': 'application/json' } }
           )

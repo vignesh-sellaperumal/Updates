@@ -56,7 +56,7 @@ export default class SignupComponent extends React.Component
     redirectToLogin = () => {
         if(this.state.password == this.state.confirmPassword){
             axios.post(
-                'https://backendtrends.herokuapp.com/details/add',
+                'http://localhost:5000/details/add',
                 { 
                   email: this.state.email,
                   username: this.state.username,

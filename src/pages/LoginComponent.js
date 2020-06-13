@@ -6,7 +6,6 @@ import InputComponent from '../components/InputComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import axios from 'axios';
 import disableBrowserBackButton from 'disable-browser-back-navigation';
-import nodemailer from 'nodemailer';
 
 class LoginComponent extends React.Component
 {
